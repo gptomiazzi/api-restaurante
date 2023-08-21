@@ -12,15 +12,8 @@ const createCustomer = async (req, res) => {
   return res.status(201).json(createdCustomer);
 };
 
-const deleteCustomer = async(req, res) => {
-  const { id } = req.params;
-
-  await customerModel.deleteCustomer(id);
-  return res.status(204).json();
-};
-
 module.exports = {
   getAll,
   createCustomer,
-  deleteCustomer
+
 };
