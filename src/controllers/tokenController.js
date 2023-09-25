@@ -4,14 +4,14 @@ let refreshTokens = [];
 
 const generateAccessToken = (user) => {
   return jwt.sign(user, process.env.SECRET, {
-    expiresIn: 30
+    expiresIn: 300
   });
 };
 
 const generateRefreshToken = (user) => {
   return jwt.sign(user, process.env.REFRESH_TOKEN, {
     expiresIn: 3600
-  })
+  });
 };
 
 const verifyTokenExpiration = (req, res) => {
