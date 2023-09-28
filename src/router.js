@@ -32,7 +32,7 @@ router.post('/createProduct', auth.verifyJWT, productController.createProduct);
 
 //Pedido
 router.get('/viewOrders', auth.verifyJWT, orderController.getAll);
-router.post('/createOrder', auth.verifyJWT, orderController.createOrder);
+router.post('/createOrder', orderController.createOrder);
 router.post('/addItem', auth.verifyJWT, orderController.addItem);
 router.post('/closeOrder', auth.verifyJWT, orderController.closeOrder);
 

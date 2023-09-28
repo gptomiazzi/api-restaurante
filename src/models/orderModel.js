@@ -7,13 +7,13 @@ const getAll = async () => {
 };
 
 const createOrder = async (order) => {
-  const { itens, valor_total, id_cliente, data_pedido } = order;
+  const { itens, valor_total, cliente_id, data_pedido } = order;
 
-  console.log(itens, valor_total, id_cliente, data_pedido);
+  console.log(itens, valor_total, cliente_id, data_pedido);
 
-  const sqlQuery = 'INSERT INTO pedido (itens, valor_total, id_cliente, data_pedido) VALUES (?, ?, ?, ?)';
+  const sqlQuery = 'INSERT INTO pedido (itens, valor_total, cliente_id, data_pedido) VALUES (?, ?, ?, ?)';
 
-  const [createdOrder] = await conn.execute(sqlQuery, [itens, valor_total, id_cliente, data_pedido]);
+  const [createdOrder] = await conn.execute(sqlQuery, [itens, valor_total, cliente_id, data_pedido]);
 
   return { message: `Pedido n° ${createdOrder.insertId} criado` };
 };
